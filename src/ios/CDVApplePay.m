@@ -14,7 +14,6 @@
     NSString * StripePublishableKey = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"StripePublishableKey"];
     merchantId = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"ApplePayMerchant"];
     [Stripe setDefaultPublishableKey:StripePublishableKey];
-    [Stripe setDefaultPublishableKey:StripePublishableKey];
     [self pluginInitialize];
     return self;
 }
