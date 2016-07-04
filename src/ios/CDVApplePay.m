@@ -9,13 +9,28 @@
 
 @implementation CDVApplePay
 
-- (CDVPlugin*)initWithWebView:(UIWebView*)theWebView
-{
+///**
+// * Initialization Method for Cordova versions belowe 4.0
+// */
+//- (CDVPlugin*)initWithWebView:(UIWebView*)theWebView
+//{
+//    NSString * StripePublishableKey = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"StripePublishableKey"];
+//    merchantId = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"ApplePayMerchant"];
+//    [Stripe setDefaultPublishableKey:StripePublishableKey];
+//    self = (CDVApplePay*)[super initWithWebView:(UIWebView*)theWebView];
+//    return self;
+//}
+
+/**
+ * Initialization Method for Cordova 4.0 and above
+ */
+- (void) pluginInitialize {
+    [super pluginInitialize];
+    
+    NSLog(@"Initialize Apple Pay Plugin");
     NSString * StripePublishableKey = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"StripePublishableKey"];
     merchantId = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"ApplePayMerchant"];
     [Stripe setDefaultPublishableKey:StripePublishableKey];
-    [self pluginInitialize];
-    return self;
 }
 
 - (void)dealloc
