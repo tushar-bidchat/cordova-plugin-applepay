@@ -162,8 +162,8 @@
                @"id": token.card.cardId,
                @"brand": brand,
                @"last4": [NSString stringWithFormat:@"%@", token.card.last4],
-               @"exp_month": [NSString stringWithFormat:@"%lu", token.card.expMonth],
-               @"exp_year": [NSString stringWithFormat:@"%lu", token.card.expYear]
+               @"exp_month": [NSString stringWithFormat:@"%u", token.card.expMonth],
+               @"exp_year": [NSString stringWithFormat:@"%u", token.card.expYear]
            };
             
             NSDictionary* message = @{
